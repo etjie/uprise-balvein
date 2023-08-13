@@ -74,6 +74,35 @@ Flatsome_Option::add_field( 'option', array(
 ) );
 
 Flatsome_Option::add_field( 'option', array(
+	'type'            => 'select',
+	'settings'        => 'category_sticky_sidebar_mode',
+	'label'           => __( 'Sticky mode', 'flatsome-admin' ),
+	'section'         => 'woocommerce_product_catalog',
+	'default'         => '',
+	'choices'         => array(
+		''           => __( 'CSS (native)', 'flatsome-admin' ),
+		'javascript' => __( 'JavaScript (enhanced)', 'flatsome-admin' ),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'category_sidebar',
+			'operator' => '!==',
+			'value'    => 'none',
+		),
+		array(
+			'setting'  => 'category_sidebar',
+			'operator' => '!==',
+			'value'    => 'off-canvas',
+		),
+		array(
+			'setting'  => 'category_sticky_sidebar',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
+
+Flatsome_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'category_grid_style',
 	'label'     => __( 'List Style', 'flatsome-admin' ),
@@ -460,6 +489,15 @@ Flatsome_Option::add_field( 'option', array(
 
 Flatsome_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
+	'settings'  => 'product_box_review_count',
+	'transport' => $transport,
+	'label'     => __( 'Show review count', 'flatsome-admin' ),
+	'section'   => 'woocommerce_product_catalog',
+	'default'   => 0,
+) );
+
+Flatsome_Option::add_field( 'option', array(
+	'type'      => 'checkbox',
 	'settings'  => 'short_description_in_grid',
 	'transport' => $transport,
 	'label'     => __( 'Show Short Description', 'flatsome-admin' ),
@@ -500,12 +538,28 @@ Flatsome_Option::add_field( 'option', array(
 ) );
 
 Flatsome_Option::add_field( 'option', array(
+	'type'        => 'checkbox',
+	'settings'    => 'sale_bubble',
+	'transport'   => $transport,
+	'label'       => __( 'Show sale bubble', 'flatsome-admin' ),
+	'section'     => 'woocommerce_product_catalog',
+	'default'     => 1,
+) );
+
+Flatsome_Option::add_field( 'option', array(
 	'type'              => 'text',
 	'settings'          => 'sale_bubble_text',
 	'transport'         => $transport,
-	'label'             => __( 'Custom Sale Bubble Text', 'flatsome-admin' ),
+	'label'             => __( 'Custom sale bubble text', 'flatsome-admin' ),
 	'section'           => 'woocommerce_product_catalog',
 	'sanitize_callback' => 'wp_kses_post',
+	'active_callback' => array(
+		array(
+			'setting'  => 'sale_bubble',
+			'operator' => '!=',
+			'value'    => false,
+		),
+	),
 	'default'           => '',
 ) );
 
@@ -514,6 +568,13 @@ Flatsome_Option::add_field( 'option', array(
 	'settings' => 'sale_bubble_percentage',
 	'label'    => __( 'Enable % instead of "Sale!"', 'flatsome-admin' ),
 	'section'  => 'woocommerce_product_catalog',
+	'active_callback' => array(
+		array(
+			'setting'  => 'sale_bubble',
+			'operator' => '!=',
+			'value'    => false,
+		),
+	),
 	'default'  => '0',
 ) );
 
@@ -521,7 +582,7 @@ Flatsome_Option::add_field( 'option', array(
 	'type'              => 'text',
 	'settings'          => 'sale_bubble_percentage_formatting',
 	'transport'         => $transport,
-	'label'             => __( 'Sale Bubble % Formatting', 'flatsome-admin' ),
+	'label'             => __( 'Sale bubble % formatting', 'flatsome-admin' ),
 	'description'       => __( 'How the discount should be displayed. e.g. -{value}%', 'flatsome-admin' ),
 	'section'           => 'woocommerce_product_catalog',
 	'sanitize_callback' => 'wp_kses_post',
@@ -530,6 +591,11 @@ Flatsome_Option::add_field( 'option', array(
 			'setting'  => 'sale_bubble_percentage',
 			'operator' => '==',
 			'value'    => true,
+		),
+		array(
+			'setting'  => 'sale_bubble',
+			'operator' => '!=',
+			'value'    => false,
 		),
 	),
 	'default'           => '-{value}%',
@@ -729,13 +795,38 @@ if ( get_theme_mod( 'swatches' ) ) :
 	Flatsome_Option::add_field( 'option', array(
 		'type'            => 'checkbox',
 		'settings'        => 'swatches_box_reset',
-		'label'           => __( 'Auto reset selection', 'flatsome-admin' ),
+		'label'           => __( 'Auto reset', 'flatsome-admin' ),
 		'section'         => 'woocommerce_product_catalog',
 		'active_callback' => array(
 			array(
 				'setting'  => 'swatches_box_attribute',
 				'operator' => '!=',
 				'value'    => '',
+			),
+		),
+		'default'         => 0,
+	) );
+
+	Flatsome_Option::add_field( 'option', array(
+		'type'            => 'checkbox',
+		'settings'        => 'swatches_box_reset_limited',
+		'label'           => __( 'Reset limited', 'flatsome-admin' ),
+		'section'         => 'woocommerce_product_catalog',
+		'active_callback' => array(
+			array(
+				'setting'  => 'swatches_box_attribute',
+				'operator' => '!=',
+				'value'    => '',
+			),
+			array(
+				'setting'  => 'swatches_box_layout',
+				'operator' => '==',
+				'value'    => 'limit',
+			),
+			array(
+				'setting'  => 'swatches_box_reset',
+				'operator' => '!=',
+				'value'    => 0,
 			),
 		),
 		'default'         => 0,

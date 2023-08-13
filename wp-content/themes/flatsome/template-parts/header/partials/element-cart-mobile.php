@@ -1,5 +1,12 @@
-<?php if ( is_woocommerce_activated() && flatsome_is_wc_cart_available() ) { ?>
 <?php
+/**
+ * Mobile cart element.
+ *
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.17.5
+ */
+
+if ( is_woocommerce_activated() && flatsome_is_wc_cart_available() ) {
   // Get Cart replacement for catalog_mode
   if(flatsome_option('catalog_mode')) { get_template_part('template-parts/header/partials/element','cart-replace'); return;}
   $cart_style = flatsome_option('header_cart_style');
@@ -10,6 +17,10 @@
   if ( $disable_mini_cart ) {
     $cart_style = 'link';
   }
+
+	if ( fl_woocommerce_version_check( '7.8.0' ) && ! wp_script_is( 'wc-cart-fragments' ) ) {
+		wp_enqueue_script( 'wc-cart-fragments' );
+	}
 ?>
 <li class="cart-item has-icon">
 

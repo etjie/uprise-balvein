@@ -1,3 +1,332 @@
+--- 3.17.6 ---
+This release contains an enhanced security measure. We recommend updating your sites promptly for optimal protection.
+
+--- 3.17.5 ---
+FIXED: Resolved an issue where the header cart item element was not updating in some cases.
+FIXED: Toggling of sticky-hide-on-scroll active class.
+FIXED: Banner zoom long hover style.
+
+UPDATED: Language files.
+
+--- 3.17.4 ---
+NEW: WooCommerce 7.9 compatibility.
+
+ENHANCEMENT: Improved WCML multi-currency support.
+
+FIXED: Google map Pegman & buttons placement.
+FIXED: Live search not showing results in some cases.
+FIXED: Sticky section on mobile.
+
+CHANGED: Copy as Shortcode: replaced navigator API with a prompt for reliability.
+
+UPDATED: Language files.
+
+--- 3.17.3 ---
+FIXED: Scroll-to link with full URLs not navigating in some cases.
+FIXED: Icons alignment in the admin menu dropdown.
+FIXED: Apply Coupon button color.
+
+UPDATED: Language files.
+
+--- 3.17.2 ---
+NEW: WooCommerce 7.8 compatibility.
+
+UPDATED: Google Fonts list.
+UPDATED: Language files.
+
+--- 3.17.1 ---
+NEW: Lottie link options.
+NEW: Swatches/product: Disable deselect option.
+
+ENHANCEMENT: Improved no menu assigned message in Vertical Menu.
+ENHANCEMENT: Various CSS improvements.
+
+FIXED: Catalog sidebar sticky mode option visibility.
+FIXED: flatsome-header-sticky event triggered more than once.
+FIXED: Left and right bounce in animations didn't start in some cases.
+FIXED: PHP 8.1 deprecated warning.
+FIXED: Scroll-to with numbers only.
+FIXED: Scroll-to with special chars.
+FIXED: Single product pricing currency in Safari.
+FIXED: Swatches/shop: text-right alignment.
+FIXED: WP Rocket integration script version.
+
+UPDATED: Language files.
+
+DEV: Added flatsome_admin_menu_items_enabled filter.
+
+
+--- 3.17.0 ---
+NEW: Lottie Element (Bodymovin), a powerful and flexible way to integrate Lottie animations.
+NEW: AJAX add to cart buttons on single product page & quick view (optional).
+NEW: Lazy load Instagram feeds (optional).
+NEW: Header element Secondary Menu.
+NEW: Implemented native CSS-based sticky columns for enhanced performance.
+NEW: Integrated dynamic per-page load offset calculation for optimized scroll-to experience.
+NEW: Sticky sidebar/column mode option.
+NEW: Swatches/shop: Reset limited swatches option.
+NEW: Auto open & scroll to accordion item per URL hash.
+NEW: Auto-scroll to tab per URL hash.
+NEW: Slider: Responsive slide width.
+NEW: Refactored follow links for enhanced customization, addition, and reordering capabilities.
+NEW: Refactored share links for enhanced customization, addition, and reordering capabilities.
+NEW: Refactored sticky column JavaScript (enhanced & developed in-house).
+NEW: Lottie Path: Set the source path or upload a file for your Lottie animation.
+NEW: Lottie Animation Speed: Adjust the animation speed to suit your needs.
+NEW: Lottie Autoplay: Toggle autoplay for your Lottie animations.
+NEW: Lottie Mouse behavior: Set the animation behavior on mouse events.
+NEW: Lottie Triggers: Choose from multiple trigger options for your animations: none, on hover, on click, or on scroll.
+NEW: Lottie Start at X% Viewport (scroll): Define the animation start point based on the viewport percentage when scrolling.
+NEW: Lottie Finish at X% Viewport (scroll): Define the animation end point based on the viewport percentage when scrolling.
+NEW: Lottie Play in Reverse: Enable playing the animation in reverse.
+NEW: Lottie Start Animation at X%: Set the starting point of the animation.
+NEW: Lottie End Animation at X%: Set the ending point of the animation.
+NEW: Lottie Player Controls: Provide users with built-in player controls for the Lottie animations.
+NEW: Added 'Offset Type' option on scroll-to.
+NEW: Added 'Offset Value' option for customizing scroll-to value.
+NEW: Yoast & Rank Math: make primary term active category in WooCommerce widget.
+
+ENHANCEMENT: Centering the canvas in UX Builder.
+ENHANCEMENT: Combined post date and author into a single string for translation purposes.
+ENHANCEMENT: Improved customizer sortable enabled/disabled state style.
+ENHANCEMENT: Improved various translation strings.
+ENHANCEMENT: Infinite scrolling in conjunction with Facet WP.
+ENHANCEMENT: Menu link element can now use mailto:, sms:, ... protocol links.
+ENHANCEMENT: Replaced jQuery waypoint with a more efficient method for better performance.
+ENHANCEMENT: Separated blog post shortcode links to image and title.
+ENHANCEMENT: Scroll hierarchy when dragging over it in UX Builder.
+ENHANCEMENT: Swatch flex spacing & added size variables.
+ENHANCEMENT: UX Blocks: Hide from nav menus selection.
+ENHANCEMENT: Various CSS improvements.
+
+FIXED: Attach events to duplicated elements in UX Builder.
+FIXED: Edit with UX Builder button in Gutenberg not visible in some cases.
+FIXED: Focus duplicated element correctly in UX Builder.
+FIXED: Sorting multi select controls in UX Builder.
+FIXED: Multi select controls showing all terms or tags in UX Builder in some cases.
+FIXED: Issue where the $.block overlay was appearing over the header in some cases.
+FIXED: Mobile logo left positioning in conjunction with desktop center logo positioning.
+FIXED: Portfolio tag breadcrumbs going outside of the container.
+FIXED: Potential XSS within UX Builder.
+FIXED: Prevent native drag on elements in UX Builder.
+FIXED: Refined scroll-to positioning for WooCommerce notices (e.g., on the checkout page) for a better user experience.
+FIXED: Replaced WooCommerce deprecated methods.
+FIXED: Search lightbox and shortcode button dimensions on mobile.
+FIXED: Tabs: Lazy load issue in other than the first tab with animated content element.
+FIXED: Blog posts href on button element.
+FIXED: Unknown format specifier on tab title in some cases.
+FIXED: WordPress 6.2 deprecations.
+
+UPDATED: Google Fonts list.
+UPDATED: Language files.
+
+DEV: Added flatsome_follow_links filter.
+DEV: Added flatsome_share_links filter.
+DEV: Added flatsome_shortcode_${tag}_social_links filter.
+DEV: Deprecated flatsome_swatches() in favor of swatches().
+DEV: Updated Tooltipster to 4.2.8 + migrate.
+
+Note: Minimum required WooCommerce version 4.7.0.
+Note: Minimum required WP version 5.4.0.
+
+--- 3.16.8 ---
+NEW: Support for Instagram access tokens (Instagram Basic Display).
+NEW: Select connected Instagram account from select list in UX Builder.
+
+CHANGED: Remove old Instagram scrape method.
+
+--- 3.16.7 ---
+FIXED: Issue with quantity buttons on cart not functioning after updating cart on WooCommerce 7.5.
+
+--- 3.16.6 ---
+NEW: WooCommerce 7.4 compatibility.
+NEW: Updated Google Fonts list.
+
+ENHANCEMENT: Added localization admin info panel.
+
+FIXED: Integration of woocommerce-tm-extra-product did not load due to class name change.
+FIXED: PHP warning in class-wc-product-data-fields.php undefined array key 0.
+FIXED: Compatibility issue with YITH WooCommerce Wishlist and UX Builder.
+FIXED: Warning in the block editor when the "UX Builder content" block is rendered.
+FIXED: Google Maps API deprecated message.
+
+--- 3.16.5 ---
+NEW: WooCommerce 7.3 compatibility.
+NEW: Updated Google Fonts list.
+
+FIXED: Cart count was added to the shop icon globally in some cases (fragments).
+FIXED: Editing checkout page in UX Builder if cart is empty.
+
+--- 3.16.4 ---
+NEW: WooCommerce 7.2.1 compatibility.
+
+--- 3.16.3 ---
+NEW: WooCommerce 7.2 compatibility.
+
+ENHANCEMENT: Improved WPML configuration.
+
+FIXED: Viewport accessibility user scalable.
+FIXED: Team Members: overlay & shade style not rendering shortcodes in content.
+FIXED: Interruption on external product button link navigation if Vimeo or youtube was linked.
+FIXED: Background video not auto-playing in some cases.
+FIXED: Various typos.
+
+DEV: Recommended PHP version 8.0 or higher.
+
+--- 3.16.2 ---
+NEW: WooCommerce 7.0.1 compatibility.
+
+FIXED: Copy as Shortcode on Safari.
+FIXED: Issues with searchable select options in UX Builder.
+FIXED: Renamed option: Disable Google Fonts → Disable Fonts.
+
+--- 3.16.1 ---
+FIXED: Toggle tabs in sub menus.
+FIXED: JavaScript error in Safari on iOS 13 and below.
+FIXED: Standard font-family incorrect CSS value output.
+FIXED: Font inherit & initial setting CSS value output.
+FIXED: Font styles CSS was generated, if fonts where disabled.
+FIXED: UX Builder: Set map latitude and longitude values correctly.
+FIXED: Shop sidebar flickering (sticky sidebar in combination with infinite loading).
+FIXED: The variation gallery only showed the parent product image if the variation has no images.
+FIXED: PHP Notice: Trying to access array offset on value of type bool in single-product/product-image-vertical.php.
+FIXED: Prevented notices being displayed for a split second in flatsome admin panels.
+
+Note: Console will now notify if reduced motion is enabled on your OS.
+
+--- 3.16.0 ---
+NEW: WooCommerce 6.9 compatibility.
+NEW: Product additional variation images.
+NEW: Product gallery grid layouts (stacked).
+NEW: UX Builder: Resize handle for banner height.
+NEW: UX Builder: Copy as shortcode element context menu item.
+NEW: UX Builder: Show all registered image sizes.
+NEW: UX Builder: Responsive max width for column.
+NEW: Google Fonts served locally instead of CDN. (location: wp-content/fonts/)
+NEW: Option to serve Google Fonts from CDN.
+NEW: Option to enable or disable sale bubble.
+NEW: Option to show product review count in catalog.
+NEW: Option to disable single blog post category.
+NEW: Option to disable single blog post title.
+NEW: Status panel (environment, template overrides, ...).
+NEW: Status overview widget.
+NEW: Fade-in hover style in element text options.
+NEW: Backup and Import: Delete options backup button.
+NEW: Swatches: Display value on swatch hover on single product page.
+NEW: Swatches: Option to make out-of-stock items inactive.
+NEW: Include/exclude out of stock products in Product Flip element.
+NEW: Blog posts: filter by multiple post tags.
+NEW: Products: filter by multiple product tags.
+NEW: Products flipbook: tag filtering.
+NEW: Products element order by price.
+NEW: Image: Title attribute option.
+NEW: Vertical menu opener color option.
+NEW: Vertical menu fly-out width option.
+NEW: Vertical menu fly-out nav divider option.
+NEW: Vertical menu fly-out nav height option.
+NEW: Vertical menu fly-out nav color option.
+NEW: Vertical menu fly-out nav color:hover option.
+NEW: Vertical menu fly-out nav bg color:hover option.
+NEW: All in One SEO breadcrumb integration.
+NEW: SEOPress PRO breadcrumb integration.
+
+ENHANCEMENT: Reduced CSS by 20%.
+ENHANCEMENT: UX Builder: Scrub inputs vertically.
+ENHANCEMENT: UX Builder: Improved paste values in inputs.
+ENHANCEMENT: UX Builder: Improved responsiveness of scrub inputs.
+ENHANCEMENT: UX Builder: Improved resizing of text boxes.
+ENHANCEMENT: UX Builder: Reduced navigation animations.
+ENHANCEMENT: UX Builder: Removed some interaction appending to browser history.
+ENHANCEMENT: Disable some animations when "Reduced motion" is enabled for better accessibility.
+ENHANCEMENT: Render open accordion on the server.
+ENHANCEMENT: Disabled sticky add to cart on stacked layouts.
+ENHANCEMENT: Swatches: Catalog picture tag support.
+ENHANCEMENT: Swatches: Ensure variation image on inactive variations.
+ENHANCEMENT: Swatches: Disable initially out of stock.
+ENHANCEMENT: Improved scrolling performance.
+ENHANCEMENT: Improved cache busting compatibility on chunk files.
+ENHANCEMENT: Improved tabs accessibility.
+ENHANCEMENT: Improved button accessibility.
+ENHANCEMENT: Improved accordions accessibility.
+ENHANCEMENT: Removed active filter title on the filter button.
+ENHANCEMENT: Outline the focused element when pressing the tab key.
+ENHANCEMENT: Improved keyboard usage with the main menu.
+ENHANCEMENT: Improved WPML configuration.
+ENHANCEMENT: Various CSS improvements.
+
+FIXED: PHP Error: must be of type array, string given in ux_instagram_feed.php in some cases.
+FIXED: Incorrect google CDN link in combination with 'default Browser Font-Family'.
+FIXED: Synchronous DOM mutation listener to a 'DOMNodeInserted' event violation.
+FIXED: UX Builder: Re-play animations after moving element to another container.
+FIXED: UX Builder: Don't server-side render element after moving to another container.
+FIXED: UX Builder: Plugin compatibility issues when editing draft posts.
+FIXED: UX Builder: Keep scrubbing when the pointer enters the canvas.
+FIXED: UX Builder: Prevent native drag on anchor HTML elements.
+FIXED: Resume autoplaying slider on touch devices when touching outside.
+FIXED: Exiting full-screen mp4 video navigated the browser back on iOS.
+FIXED: PHP notice: undefined offset on menu items class in some cases.
+FIXED: Catalog swatches with non ASCII (f.ex: Arabic) attribute slugs.
+FIXED: Backslash in Advanced → Custom CSS fields should now be kept.
+FIXED: WooCommerce One Page Checkout quantity compatibility.
+FIXED: Sticky column when inner height dynamically changed.
+FIXED: Italic font variant style did not apply italic.
+FIXED: Improved bfcache support on Chrome and Firefox.
+FIXED: Backup option double description.
+
+DEV: Updated FB graph API to v14.0.
+DEV: Updated devbridgeAutocomplete to 1.4.11.
+DEV: Added flatsome_loop_review_count_html filter.
+DEV: Added flatsome_icon filter.
+DEV: Added flatsome_single_product_thumbnails_classes filter.
+DEV: Added flatsome_single_product_thumbnails_render_without_attachments filter.
+
+Note: add_action( 'wp_head', 'flatsome_prefetch_scripts', 5 ); changed to add_filter( 'wp_resource_hints', 'flatsome_prefetch_scripts', 10, 2 );
+Note: UX Builder: To scrub and input value (margin, padding, ...) press the mouse key down upon an input, then move the mouse up or down.
+Note: Dropping support for IE (new features are no longer tested and are not guaranteed to function optimally for this browser)
+
+--- 3.15.7 ---
+FIXED: Slider dragging & scrolling on iOS 15+.
+FIXED: Lazy load not working properly in some cases on Safari.
+
+ENHANCEMENT: Improved Bootstrap compatibility.
+
+--- 3.15.6 ---
+FIXED: WordPress 6.0 CSS conflict.
+FIXED: Element style (padding, margin,..) not applying when column is made sticky. 
+
+--- 3.15.5 ---
+FIXED: Integration options showed up in Updates tab options.
+FIXED: Backup Options increasing wp_options table size when used more than once.
+FIXED: PHP notice if no image is set on UX Image attribute.
+FIXED: Plugin path issue in Setup Wizard on Amazon Lightsail (bitnami).
+FIXED: Pages on the search result page if WooCommerce is not active.
+FIXED: WooCommerce Attribute Filter Widget overflow issue.
+
+ENHANCEMENT: PNG support for lightbox images.
+ENHANCEMENT: Improved toggle button accessibility.
+
+--- 3.15.4 ---
+NEW: Release channel option (stable/beta).
+
+FIXED: Updated unannounced change of form login text string.
+FIXED: PHP notice if no color is set on UX Color attribute.
+FIXED: Swatches label center and right alignment on single product.
+FIXED: Related product title indent with an increased site container width.
+FIXED: Clear cart after payment on simple and focused templates in some cases.
+FIXED: Missing return value in swatch preview column content filter.
+FIXED: Product box swatch selected variation image in off-canvas.
+FIXED: Lightbox tall images intersecting with the viewport.
+FIXED: Builder: WCML custom product featured image reset.
+FIXED: Typo in Flatsome registration admin notice string.
+FIXED: Scroll to in combination with hidden sliders.
+FIXED: Equalize product box in off-canvas.
+
+ENHANCEMENT: Vertical Menu dropdown now responds to Container width & Full width menu item design.
+
+Note: Beta pre releases will from now on now be presented in the WP update panel if enabled. Betas are the
+versions of choice for testers in preparation for a theme release. They provide a short-term-stable point
+to report bugs against. Grab these to make sure the upcoming release works well on your infrastructure.
+
 --- 3.15.3 ---
 NEW: WooCommerce 6.1 compatibility.
 

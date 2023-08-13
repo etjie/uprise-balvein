@@ -3,8 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { createBlock, registerBlockType } from '@wordpress/blocks';
-import { without } from 'lodash';
-import { Icon, tag } from '@woocommerce/icons';
+import { Icon, percent } from '@wordpress/icons';
 /**
  * Internal dependencies
  */
@@ -19,7 +18,7 @@ registerBlockType( 'woocommerce/product-on-sale', {
 	icon: {
 		src: (
 			<Icon
-				srcElement={ tag }
+				icon={ percent }
 				className="wc-block-editor-components-block-icon"
 			/>
 		),
@@ -45,18 +44,12 @@ registerBlockType( 'woocommerce/product-on-sale', {
 			default: 'date',
 		},
 	},
-	example: {
-		attributes: {
-			isPreview: true,
-		},
-	},
 	transforms: {
 		from: [
 			{
 				type: 'block',
-				blocks: without(
-					sharedAttributeBlockTypes,
-					'woocommerce/product-on-sale'
+				blocks: sharedAttributeBlockTypes.filter(
+					( value ) => value !== 'woocommerce/product-on-sale'
 				),
 				transform: ( attributes ) =>
 					createBlock( 'woocommerce/product-on-sale', attributes ),

@@ -2,7 +2,8 @@
 /**
  * The template for displaying the footer.
  *
- * @package flatsome
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.16.0
  */
 
 global $flatsome_opt;
@@ -19,8 +20,6 @@ global $flatsome_opt;
 </div>
 
 <?php wp_footer(); ?>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4300098778201117"
-     crossorigin="anonymous"></script>
 
 </body>
 </html>

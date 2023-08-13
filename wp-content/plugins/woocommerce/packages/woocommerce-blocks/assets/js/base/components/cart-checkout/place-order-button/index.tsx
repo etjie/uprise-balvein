@@ -1,14 +1,21 @@
 /**
  * External dependencies
  */
-import { __ } from '@wordpress/i18n';
+import classnames from 'classnames';
 import { useCheckoutSubmit } from '@woocommerce/base-context/hooks';
-import { Icon, done } from '@woocommerce/icons';
+import { Icon, check } from '@wordpress/icons';
 import Button from '@woocommerce/base-components/button';
 
-const PlaceOrderButton = (): JSX.Element => {
+interface PlaceOrderButton {
+	label: string;
+	fullWidth?: boolean | undefined;
+}
+
+const PlaceOrderButton = ( {
+	label,
+	fullWidth = false,
+}: PlaceOrderButton ): JSX.Element => {
 	const {
-		submitButtonText,
 		onSubmit,
 		isCalculating,
 		isDisabled,
@@ -18,7 +25,13 @@ const PlaceOrderButton = (): JSX.Element => {
 
 	return (
 		<Button
-			className="wc-block-components-checkout-place-order-button"
+			className={ classnames(
+				'wc-block-components-checkout-place-order-button',
+				{
+					'wc-block-components-checkout-place-order-button--full-width':
+						fullWidth,
+				}
+			) }
 			onClick={ onSubmit }
 			disabled={
 				isCalculating ||
@@ -28,14 +41,7 @@ const PlaceOrderButton = (): JSX.Element => {
 			}
 			showSpinner={ waitingForProcessing }
 		>
-			{ waitingForRedirect ? (
-				<Icon
-					srcElement={ done }
-					alt={ __( 'Done', 'woo-gutenberg-products-block' ) }
-				/>
-			) : (
-				submitButtonText
-			) }
+			{ waitingForRedirect ? <Icon icon={ check } /> : label }
 		</Button>
 	);
 };

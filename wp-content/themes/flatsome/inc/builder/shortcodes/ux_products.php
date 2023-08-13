@@ -79,6 +79,7 @@ $options = array(
                 'normal' => 'Normal',
                 'title' => 'Title',
                 'sales' => 'Sales',
+                'price' => 'Price',
                 'rand' => 'Random',
                 'date' => 'Date'
             )
@@ -127,8 +128,10 @@ $options['post_options']['options']['tags'] = array(
   'type' => 'select',
   'heading' => 'Tag',
   'conditions' => 'ids == ""',
+  'full_width' => true,
   'default' => '',
   'config' => array(
+	  'multiple' => true,
       'placeholder' => 'Select...',
       'termSelect' => array(
           'post_type' => 'product',

@@ -1,3 +1,12 @@
+<?php
+/**
+ * Header main.
+ *
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.16.0
+ */
+
+?>
 <div id="masthead" class="header-main <?php header_inner_class('main'); ?>">
       <div class="header-inner flex-row container <?php flatsome_logo_position(); ?>" role="navigation">
 
@@ -34,10 +43,9 @@
               <?php flatsome_header_elements('header_mobile_elements_right','mobile'); ?>
             </ul>
           </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4300098778201117"
-     crossorigin="anonymous"></script>
+
       </div>
-     
+
       <?php if(get_theme_mod('header_divider', 1)) { ?>
       <div class="container"><div class="top-divider full-width"></div></div>
       <?php }?>
