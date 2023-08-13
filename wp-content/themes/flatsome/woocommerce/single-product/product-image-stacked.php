@@ -10,9 +10,10 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.5.1
+ * @see              https://docs.woocommerce.com/document/template-structure/
+ * @package          WooCommerce/Templates
+ * @version          7.8.0
+ * @flatsome-version 3.17.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -34,6 +35,10 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 ) );
 
 $slider_classes = array('product-gallery-stacked', 'product-gallery-slider', 'slider', 'slider-nav-small', 'mb-half');
+
+if ( get_theme_mod( 'product_gallery_grid_layout' ) ) {
+	$slider_classes[] = 'product-gallery-grid-layout product-gallery-grid-layout--' . get_theme_mod( 'product_gallery_grid_layout' );
+}
 
 // Image Zoom
 if(get_theme_mod('product_zoom', 0)){
@@ -58,8 +63,8 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
     <?php do_action('flatsome_product_image_tools_top'); ?>
   </div>
 
-  <figure class="woocommerce-product-gallery__wrapper <?php echo implode(' ', $slider_classes); ?>"
-        data-flickity='{
+  <div class="woocommerce-product-gallery__wrapper <?php echo implode(' ', $slider_classes); ?>"
+		  data-flickity-options='{
                 "cellAlign": "center",
                 "wrapAround": true,
                 "autoPlay": false,
@@ -85,7 +90,7 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
 
     do_action( 'woocommerce_product_thumbnails' );
     ?>
-  </figure>
+  </div>
 </div>
 <?php do_action('flatsome_after_product_images'); ?>
 

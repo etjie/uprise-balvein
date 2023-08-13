@@ -1,19 +1,20 @@
 /**
  * External dependencies
  */
-import { Icon, asterisk } from '@woocommerce/icons';
-import { registerFeaturePluginBlockType } from '@woocommerce/block-settings';
+import { Icon, customPostType } from '@wordpress/icons';
+import { registerBlockType } from '@wordpress/blocks';
+
 /**
  * Internal dependencies
  */
 import { Edit, Save } from './edit';
-import metadata from './block.json';
+import './style.scss';
 
-registerFeaturePluginBlockType( metadata, {
+registerBlockType( 'woocommerce/checkout-terms-block', {
 	icon: {
 		src: (
 			<Icon
-				srcElement={ asterisk }
+				icon={ customPostType }
 				className="wc-block-editor-components-block-icon"
 			/>
 		),

@@ -14,7 +14,7 @@
  * @return void
  */
 function flatsome_viewport_meta() {
-	echo apply_filters( 'flatsome_viewport_meta', '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo apply_filters( 'flatsome_viewport_meta', '<meta name="viewport" content="width=device-width, initial-scale=1" />' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 add_action( 'wp_head', 'flatsome_viewport_meta', 1 );
@@ -91,6 +91,8 @@ function flatsome_header_elements( $options, $type = '' ) {
 				flatsome_header_nav( 'top_bar_nav', $walker );
 			} elseif ( $value == 'nav' ) {
 				flatsome_header_nav( 'primary', $walker );
+			} elseif ( $value == 'nav-secondary' ) {
+				flatsome_header_nav( 'secondary', $walker );
 			} elseif ( $value == 'nav-vertical' && $type === 'sidebar' ) {
 				flatsome_header_nav( 'vertical', $walker );
 			} elseif ( $value == 'wpml' ) {
@@ -257,7 +259,7 @@ class FlatsomeNavDropdown extends Walker_Nav_Menu {
 
 		// LEGACY Add flatsome Icons.
 		$menu_icon = '';
-		if ( strpos( $classes[0], 'icon-' ) !== false ) {
+		if ( isset( $classes[0] ) && strpos( $classes[0], 'icon-' ) !== false ) {
 			$menu_icon  = get_flatsome_icon( $classes[0] );
 			$classes[0] = 'has-icon-left';
 		}
@@ -367,6 +369,10 @@ class FlatsomeNavDropdown extends Walker_Nav_Menu {
 		if ( $depth == 0 ) {
 			// These lines adds your custom class and attribute.
 			$attributes .= ' class="nav-top-link"';
+
+			if ( in_array( 'has-dropdown', $classes, true ) ) {
+				$attributes .= ' aria-expanded="false" aria-haspopup="menu"';
+			}
 		}
 
 		// Image Column.
@@ -625,11 +631,7 @@ class FlatsomeNavSidebar extends Walker_Nav_Menu {
 		$icon_html   = get_post_meta( $item->ID, '_menu_item_icon-html', true );
 
 		// LEGACY if icon.
-		$menu_icon = '';
-		if ( strpos( $classes[0], 'icon-' ) !== false ) {
-			$menu_icon  = '<span class="' . $classes[0] . '"></span>';
-			$classes[0] = '';
-		}
+		if ( isset( $classes[0] ) && strpos( $classes[0], 'icon-' ) !== false ) $classes[0] = '';
 
 		if ( $icon_type === 'media' && ! empty( $icon_id )
 			 || $icon_type === 'html' && ! empty( $icon_html ) ) {
@@ -1161,7 +1163,7 @@ function flatsome_logo_position() {
 	$classes[] = 'logo-' . get_theme_mod( 'logo_position', 'left' );
 
 	// Mobile logo position.
-	if (get_theme_mod( 'logo_position_mobile', 'center' ) == 'center') $classes[] = 'medium-logo-center';
+	$classes[] = 'medium-logo-' . get_theme_mod( 'logo_position_mobile', 'center' );
 
 	echo implode( ' ', $classes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }

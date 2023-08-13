@@ -1,5 +1,12 @@
-<?php if(is_woocommerce_activated() && flatsome_is_wc_cart_available() ) { ?>
 <?php
+/**
+ * Cart element.
+ *
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.17.5
+ */
+
+if(is_woocommerce_activated() && flatsome_is_wc_cart_available() ) {
   // Get Cart replacement for catalog_mode
   if(get_theme_mod('catalog_mode')) { get_template_part('template-parts/header/partials/element','cart-replace'); return;}
   $cart_style = get_theme_mod('header_cart_style','dropdown');
@@ -12,6 +19,10 @@
   if ( $disable_mini_cart ) {
     $cart_style = 'link';
   }
+
+	if ( fl_woocommerce_version_check( '7.8.0' ) && ! wp_script_is( 'wc-cart-fragments' ) ) {
+		wp_enqueue_script( 'wc-cart-fragments' );
+	}
 ?>
 <li class="cart-item has-icon<?php if($cart_style == 'dropdown') { ?> has-dropdown<?php } ?>">
 <?php if($icon_style && $icon_style !== 'plain') { ?><div class="header-button"><?php } ?>

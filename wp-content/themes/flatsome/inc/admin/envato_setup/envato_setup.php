@@ -42,15 +42,6 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		protected $steps  = array();
 
 		/**
-		 * Relative plugin path
-		 *
-		 * @since 1.1.2
-		 *
-		 * @var string
-		 */
-		protected $plugin_path = '';
-
-		/**
 		 * Relative plugin url for this plugin folder, used when enquing scripts
 		 *
 		 * @since 1.1.2
@@ -196,10 +187,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			}
 			$this->page_url = apply_filters( $this->theme_name . '_theme_setup_wizard_page_url', $this->page_url );
 
-			//set relative plugin path url
-			$this->plugin_path = trailingslashit( $this->cleanFilePath( dirname( __FILE__ ) ) );
-			$relative_url = str_replace( $this->cleanFilePath( get_template_directory() ), '', $this->plugin_path );
-			$this->plugin_url = trailingslashit( get_template_directory_uri() . $relative_url );
+			// Set plugin URL directory.
+			$this->plugin_url = trailingslashit( get_template_directory_uri() . '/inc/admin/envato_setup' );
 		}
 
 		/**
@@ -1767,28 +1756,28 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			}
 
 			// set the blog page and the home page.
-			$shoppage = get_page_by_title( 'Shop' );
+			$shoppage = flatsome_get_page_by_title( 'Shop' );
 			if ( $shoppage ) {
 				update_option( 'woocommerce_shop_page_id',$shoppage->ID );
 			}
-			$shoppage = get_page_by_title( 'Cart' );
+			$shoppage = flatsome_get_page_by_title( 'Cart' );
 			if ( $shoppage ) {
 				update_option( 'woocommerce_cart_page_id',$shoppage->ID );
 			}
-			$shoppage = get_page_by_title( 'Checkout' );
+			$shoppage = flatsome_get_page_by_title( 'Checkout' );
 			if ( $shoppage ) {
 				update_option( 'woocommerce_checkout_page_id',$shoppage->ID );
 			}
-			$shoppage = get_page_by_title( 'My Account' );
+			$shoppage = flatsome_get_page_by_title( 'My Account' );
 			if ( $shoppage ) {
 				update_option( 'woocommerce_myaccount_page_id',$shoppage->ID );
 			}
-			$homepage = get_page_by_title( 'Classic Shop' );
+			$homepage = flatsome_get_page_by_title( 'Classic Shop' );
 			if ( $homepage ) {
 				update_option( 'page_on_front', $homepage->ID );
 				update_option( 'show_on_front', 'page' );
 			}
-			$blogpage = get_page_by_title( 'Blog' );
+			$blogpage = flatsome_get_page_by_title( 'Blog' );
 			if ( $blogpage ) {
 				update_option( 'page_for_posts', $blogpage->ID );
 				update_option( 'show_on_front', 'page' );

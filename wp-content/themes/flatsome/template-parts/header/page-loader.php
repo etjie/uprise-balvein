@@ -1,4 +1,11 @@
 <?php
+/**
+ * Page loader.
+ *
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.16.0
+ */
+
 $color = get_theme_mod('site_loader_color');
 $bg_color = get_theme_mod('site_loader_bg');
 
@@ -16,8 +23,7 @@ if(empty($bg_color) && $color == 'dark'){
 	    </div>
 		<div class="page-loader-spin"><div class="loading-spin"></div></div>
 	</div>
-	<style> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4300098778201117"
-     crossorigin="anonymous"></script>
+	<style>
 		.page-loader{opacity: 0; transition: opacity .3s; transition-delay: .3s;
 			background-color: <?php echo $bg_color; ?>;
 		}

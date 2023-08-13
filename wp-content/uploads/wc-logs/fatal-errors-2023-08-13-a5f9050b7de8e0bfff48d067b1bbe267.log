@@ -1,0 +1,24 @@
+2023-08-13T16:57:36+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 132136960 bytes) in /var/www/html/wp-content/plugins/unyson/framework/extensions/backups/class-fw-extension-backups.php on line 667
+
+2023-08-13T16:57:38+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 157302784 bytes) in /var/www/html/wp-content/plugins/unyson/framework/extensions/backups/class-fw-extension-backups.php on line 667
+
+2023-08-13T16:57:45+00:00 CRITICAL Allowed memory size of 268435456 bytes exhausted (tried to allocate 121651200 bytes) in /var/www/html/wp-content/plugins/unyson/framework/extensions/backups/class-fw-extension-backups.php on line 667
+
+2023-08-13T17:52:39+00:00 CRITICAL syntax error, unexpected token "<", expecting end of file in /var/www/html/wp-content/themes/flatsome/functions.php on line 15
+
+2023-08-13T17:53:45+00:00 CRITICAL syntax error, unexpected token "<", expecting end of file in /var/www/html/wp-content/themes/flatsome/functions.php on line 15
+
+2023-08-13T17:59:58+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+
+2023-08-13T18:02:47+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+
+2023-08-13T18:03:16+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+
+2023-08-13T18:18:00+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+
+2023-08-13T18:19:05+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+
+2023-08-13T18:19:11+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+
+2023-08-13T18:19:19+00:00 CRITICAL Cannot redeclare add_marketplace_button() (previously declared in /var/www/html/wp-content/themes/flatsome-child/functions.php:17) in /var/www/html/wp-content/themes/flatsome/functions.php on line 30
+

@@ -100,11 +100,14 @@ function ux_col($atts, $content = null) {
     'margin__sm' => '',
     'tooltip' => '',
     'max_width' => '',
+	'max_width__md' => '',
+	'max_width__sm' => '',
     'hover' => '',
     'class' => '',
     'align' => '',
     'color' => '',
 	'sticky' => '',
+	'sticky_mode' => '',
     'parallax' => '',
     'force_first' => '',
     'bg' => '',
@@ -175,29 +178,31 @@ function ux_col($atts, $content = null) {
 
 	// Inline CSS
 	$css_args = array(
-		'span'          => array(
-			'attribute' => 'max-width',
-			'value'     => $max_width,
-		),
-		'bg_color'      => array(
+		'bg_color' => array(
 			'attribute' => 'background-color',
 			'value'     => $bg_color,
 		),
 	);
 
+	$col_inner = $sticky ? '> .is-sticky-column > .is-sticky-column__inner > .col-inner' : '> .col-inner';
+
 	$args = array(
 		'padding'   => array(
-			'selector' => '> .col-inner',
+			'selector' => $col_inner,
 			'property' => 'padding',
 		),
 		'margin'    => array(
-			'selector' => '> .col-inner',
+			'selector' => $col_inner,
 			'property' => 'margin',
 		),
 		'bg_radius' => array(
-			'selector' => '> .col-inner',
+			'selector' => $col_inner,
 			'property' => 'border-radius',
 			'unit'     => 'px',
+		),
+		'max_width' => array(
+			'selector' => $col_inner,
+			'property' => 'max-width',
 		),
 	);
 
@@ -210,7 +215,7 @@ function ux_col($atts, $content = null) {
 	?>
 
 	<div id="<?php echo $_id; ?>" class="<?php echo esc_attr( $classes ); ?>" <?php echo $attributes; ?>>
-		<?php if ( $sticky ) flatsome_sticky_column_open(); ?>
+		<?php if ( $sticky ) flatsome_sticky_column_open('', $sticky_mode ); ?>
 		<div class="<?php echo esc_attr( $classes_inner ); ?>" <?php echo get_shortcode_inline_css( $css_args ); ?> <?php echo $attributes_inner; ?>>
 			<?php require __DIR__ . '/commons/border.php'; ?>
 			<?php echo do_shortcode( $content ); ?>
